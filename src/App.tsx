@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Content, FlexboxGrid, Footer } from 'rsuite';
+import Home from './Pages/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "rsuite/dist/rsuite.min.css";
+
+class App extends React.Component {
+  render(){
+    return (
+      <div className="App">
+        <Content>
+          <FlexboxGrid justify="center">
+            <FlexboxGrid.Item colspan={12}>
+              <Content style={{margin:'1em', textAlign:'left'}}>
+                <Home />
+              </Content>
+              <Content style={{margin:'1em'}}>
+                <Footer>Copy and Paste by <b>@AOM</b></Footer>
+              </Content>
+            </FlexboxGrid.Item>
+          </FlexboxGrid>
+        </Content>
+      </div>
+    );
+  }
 }
 
 export default App;
