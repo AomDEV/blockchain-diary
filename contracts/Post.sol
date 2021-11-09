@@ -27,6 +27,7 @@ contract Blogs{
         require(bytes(message).length > 0, "Message cannot be empty");
         // Set ether amount
         uint amount = 0.001 ether;
+        // Minimum amount 0.001 ETH if not, revert transaction
         require(msg.value > amount, "Not allowed amount");
         // Set current block time
         uint timestamp = block.timestamp;
